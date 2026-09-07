@@ -51,11 +51,14 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link rel="preload" href="assets/vendor/bootstrap-icons/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a" as="font" type="font/woff2" crossorigin>
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -133,7 +136,7 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html" class="active">Kontak</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list" role="button" aria-label="Buka menu navigasi" tabindex="0"></i>
       </nav>
 
       <a class="btn-getstarted d-none d-sm-block" href="https://wa.me/6288989643555?text=Halo%20Admin%20vendorcorporategift.web.id,%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20souvenir%20corporate" target="_blank" rel="noopener noreferrer">Hubungi Kami</a>
@@ -303,10 +306,11 @@
             <p class="footer-vcg-desc">Ciptakan citra profesional dengan vendor corporate gift set premium. Solusi penyedia souvenir corporate dan merchandise eksklusif untuk instansi serta event perusahaan.</p>
 
             <div class="footer-vcg-social">
-              <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-              <a href="https://wa.me/6288989643555?text=Halo%20Admin%20vendorcorporategift.web.id,%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20souvenir%20corporate" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+              <a href="#" title="Facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" title="Instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="https://wa.me/6288989643555?text=Halo%20Admin%20vendorcorporategift.web.id,%20saya%20ingin%20berkonsultasi%20mengenai%20pemesanan%20souvenir%20corporate"
+                target="_blank" rel="noopener noreferrer" title="WhatsApp" aria-label="Hubungi kami via WhatsApp"><i class="bi bi-whatsapp"></i></a>
             </div>
           </div>
 
@@ -367,7 +371,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Kembali ke atas"><i
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
