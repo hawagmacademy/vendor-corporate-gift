@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block admin, form submissions, and private files
+Disallow: /forms/
+Disallow: /scratch/
+
+# Sitemap
+Sitemap: https://vendorcorporategift.web.id/sitemap.xml
