@@ -12,15 +12,34 @@
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
-  function toggleScrolled() {
-    const selectBody = document.querySelector('body');
-    const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
-    window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+  const selectBody = document.querySelector('body');
+  const selectHeader = document.querySelector('#header');
+  const scrollTop = document.querySelector('.scroll-top');
+  let isScrolling = false;
+
+  function handleScroll() {
+    if (!isScrolling) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+
+        // toggleScrolled logic
+        if (selectHeader && (selectHeader.classList.contains('scroll-up-sticky') || selectHeader.classList.contains('sticky-top') || selectHeader.classList.contains('fixed-top'))) {
+          scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+        }
+
+        // toggleScrollTop logic
+        if (scrollTop) {
+          scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+        }
+
+        isScrolling = false;
+      });
+      isScrolling = true;
+    }
   }
 
-  document.addEventListener('scroll', toggleScrolled);
-  window.addEventListener('load', toggleScrolled);
+  document.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('load', handleScroll);
 
   /**
    * Mobile nav toggle
@@ -73,23 +92,15 @@
   /**
    * Scroll top button
    */
-  let scrollTop = document.querySelector('.scroll-top');
-
-  function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
-  }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (scrollTop) {
+    scrollTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
-  });
-
-  window.addEventListener('load', toggleScrollTop);
-  document.addEventListener('scroll', toggleScrollTop);
+  }
 
   /**
    * Animation on scroll function and init
@@ -170,17 +181,27 @@
    */
 
   function productDetailFeatures() {
+    let cachedWidth = window.innerWidth;
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { cachedWidth = window.innerWidth; }, 200);
+    }, { passive: true });
+
     // Initialize Drift for image zoom
     function initDriftZoom() {
       // Check if Drift is available
       if (typeof Drift === 'undefined') {
-        console.error('Drift library is not loaded');
         return;
       }
 
+      const mainImage = document.getElementById('main-product-image');
+      const paneContainer = document.querySelector('.image-zoom-container');
+      if (!mainImage || !paneContainer) return;
+
       const driftOptions = {
-        paneContainer: document.querySelector('.image-zoom-container'),
-        inlinePane: window.innerWidth < 768 ? true : false,
+        paneContainer: paneContainer,
+        inlinePane: cachedWidth < 768 ? true : false,
         inlineOffsetY: -85,
         containInline: true,
         hoverBoundingBox: false,
@@ -189,10 +210,7 @@
       };
 
       // Initialize Drift on the main product image
-      const mainImage = document.getElementById('main-product-image');
-      if (mainImage) {
-        new Drift(mainImage, driftOptions);
-      }
+      new Drift(mainImage, driftOptions);
     }
 
     // Thumbnail click functionality
