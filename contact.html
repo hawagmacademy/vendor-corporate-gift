@@ -58,7 +58,8 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"></noscript>
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -244,23 +245,23 @@
                  <div class="row gy-4">
 
                    <div class="col-md-6">
-                     <label class="form-label fw-bold text-dark small mb-2">Nama Instansi / PIC <span class="text-danger">*</span></label>
-                     <input type="text" name="name" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" placeholder="Contoh: PT. Maju Bersama / Bpk. Adi" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
+                     <label for="name" class="form-label fw-bold text-dark small mb-2">Nama Instansi / PIC <span class="text-danger">*</span></label>
+                     <input id="name" type="text" name="name" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" placeholder="Contoh: PT. Maju Bersama / Bpk. Adi" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
                    </div>
 
                    <div class="col-md-6">
-                     <label class="form-label fw-bold text-dark small mb-2">Email Perusahaan <span class="text-danger">*</span></label>
-                     <input type="email" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="email" placeholder="nama@perusahaan.com" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
+                     <label for="email" class="form-label fw-bold text-dark small mb-2">Email Perusahaan <span class="text-danger">*</span></label>
+                     <input id="email" type="email" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="email" placeholder="nama@perusahaan.com" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
                    </div>
 
                    <div class="col-md-6">
-                     <label class="form-label fw-bold text-dark small mb-2">Nomor WhatsApp Aktif <span class="text-danger">*</span></label>
-                     <input type="text" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="phone" placeholder="Contoh: 08123456789" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
+                     <label for="phone" class="form-label fw-bold text-dark small mb-2">Nomor WhatsApp Aktif <span class="text-danger">*</span></label>
+                     <input id="phone" type="text" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="phone" placeholder="Contoh: 08123456789" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
                    </div>
 
                    <div class="col-md-6">
-                     <label class="form-label fw-bold text-dark small mb-2">Target Lokasi Pengiriman <span class="text-danger">*</span></label>
-                     <select class="form-select px-4 py-3 border-0 rounded-4 shadow-none text-dark" name="city" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s; cursor: pointer;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
+                     <label for="city" class="form-label fw-bold text-dark small mb-2">Target Lokasi Pengiriman <span class="text-danger">*</span></label>
+                     <select id="city" class="form-select px-4 py-3 border-0 rounded-4 shadow-none text-dark" name="city" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s; cursor: pointer;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
                        <option value="" disabled selected>-- Pilih Wilayah --</option>
                        <option value="Jakarta">Jakarta &amp; Jabodetabek</option>
                        <option value="Surabaya">Surabaya &amp; Jawa Timur</option>
@@ -270,13 +271,13 @@
                    </div>
 
                    <div class="col-md-12">
-                     <label class="form-label fw-bold text-dark small mb-2">Kategori Souvenir Spesifik <span class="text-danger">*</span></label>
-                     <input type="text" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="subject" placeholder="Contoh: 200 Set Executive Gift Box" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
+                     <label for="subject" class="form-label fw-bold text-dark small mb-2">Kategori Souvenir Spesifik <span class="text-danger">*</span></label>
+                     <input id="subject" type="text" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="subject" placeholder="Contoh: 200 Set Executive Gift Box" required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';">
                    </div>
 
                    <div class="col-md-12">
-                     <label class="form-label fw-bold text-dark small mb-2">Deskripsi Detail &amp; Tanggal Event <span class="text-danger">*</span></label>
-                     <textarea class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="message" rows="4" placeholder="Ceritakan ide souvenir Anda, warna identitas logo perusahaan, kuantitas yang dibutuhkan, serta tanggal acara..." required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s; resize: none;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';"></textarea>
+                     <label for="message" class="form-label fw-bold text-dark small mb-2">Deskripsi Detail &amp; Tanggal Event <span class="text-danger">*</span></label>
+                     <textarea id="message" class="form-control px-4 py-3 border-0 rounded-4 shadow-none" name="message" rows="4" placeholder="Ceritakan ide souvenir Anda, warna identitas logo perusahaan, kuantitas yang dibutuhkan, serta tanggal acara..." required style="background-color: color-mix(in srgb, var(--surface-color), #f0f0f0 30%); box-shadow: inset 0 2px 4px rgba(0,0,0,0.02) !important; transition: all 0.3s; resize: none;" onfocus="this.style.backgroundColor='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(184, 152, 104, 0.1), inset 0 0 0 1px var(--accent-color) !important';" onblur="this.style.backgroundColor='color-mix(in srgb, var(--surface-color), #f0f0f0 30%)'; this.style.boxShadow='inset 0 2px 4px rgba(0,0,0,0.02) !important';"></textarea>
                    </div>
 
                    <div class="col-md-12 text-center mt-4 pt-2">
